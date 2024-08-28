@@ -1,0 +1,25 @@
+/*------------------------------------------------------------------------------
+ *******************************************************************************
+ * COPYRIGHT Ericsson 2012
+ *
+ * The copyright to the computer program(s) herein is the property of
+ * Ericsson Inc. The programs may be used and/or copied only with written
+ * permission from Ericsson Inc. or in accordance with the terms and
+ * conditions stipulated in the agreement/contract under which the
+ * program(s) have been supplied.
+ *******************************************************************************
+ *----------------------------------------------------------------------------*/
+package com.ericsson.oss.services.shm.job.impl;
+
+import com.ericsson.oss.services.shm.jobs.common.api.JobActivitiesResponse;
+
+public interface ManageBackupActivitiesResponseModifier {
+
+    /**
+     * @param jobActivitiesResponse
+     * @param multipleBackups
+     * @return
+     */
+    JobActivitiesResponse getManageBackupActivities(JobActivitiesResponse jobActivitiesResponse, Boolean multipleBackups);
+
+}

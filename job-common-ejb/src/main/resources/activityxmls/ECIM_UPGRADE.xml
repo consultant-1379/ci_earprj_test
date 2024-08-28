@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityInformation platformType="ECIM" jobType="UPGRADE"
+	xmlns="com:ericsson:oss:services:shm:job:activity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="com:ericsson:oss:services:shm:job:activity activity_information.xsd ">
+	<NeActivityInformation neType="DEFAULT">
+		<Activity name="prepare" order="1" type="MOACTION" mandatory="false">
+			<ActivityParams>
+				    <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="verify" order="2" type="MOACTION" mandatory="false">
+			<ActivityParams>
+					<param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="activate" order="3" type="MOACTION"
+			mandatory="false">
+			<ActivityParams>
+					<param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+				<param name="STEP_BY_STEP" inputType="MULTI-SELECTION" />
+			</ActivityParams>
+		</Activity>
+		<Activity name="confirm" order="4" type="MOACTION" mandatory="false">
+			<ActivityParams>
+					<param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<ActivitySelection
+			invalid="prepare,confirm|prepare,verify,confirm|verify,confirm" />
+	</NeActivityInformation>
+		<NeActivityInformation neType="SGSN-MME">
+		<Activity name="prepare" order="1" type="MOACTION" mandatory="false">
+			<ActivityParams>
+				    <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="verify" order="2" type="MOACTION" mandatory="false">
+			<ActivityParams>
+					<param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="activate" order="3" type="MOACTION"
+			mandatory="false">
+			<ActivityParams>
+					<param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="confirm" order="4" type="MOACTION" mandatory="false">
+			<ActivityParams>
+					<param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<ActivitySelection
+			invalid="prepare,confirm|prepare,verify,confirm|verify,confirm" />
+	</NeActivityInformation>
+
+	<!-- For RadioNode -->
+	<NeActivityInformation neType="RadioNode">
+		<Activity name="prepare" order="1" type="MOACTION" mandatory="false">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="verify" order="2" type="MOACTION" mandatory="false">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="activate" order="3" type="MOACTION"
+			mandatory="false">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+				<param name="UPGRADETYPE" inputType="SINGLE-SELECTION"
+					defaultValue="HARD">
+					<item>SOFT</item>
+					<item>HARD</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="confirm" order="4" type="MOACTION" mandatory="false">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<ActivitySelection
+			invalid="prepare,confirm|prepare,verify,confirm|verify,confirm" />
+	</NeActivityInformation>
+	<!-- For Router 6672 -->
+	<NeActivityInformation neType="Router6672">
+    <Activity name="prepare" order="1" type="MOACTION" mandatory="false">
+      <ActivityParams>
+            <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="verify" order="2" type="MOACTION" mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="activate" order="3" type="MOACTION"
+      mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="confirm" order="4" type="MOACTION" mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <ActivitySelection
+      invalid="prepare,confirm|prepare,verify,confirm|verify,confirm" />
+  </NeActivityInformation>
+  <!-- For Fronthaul 6080 -->
+  <NeActivityInformation neType="FRONTHAUL-6080">
+    <Activity name="prepare" order="1" type="MOACTION" mandatory="false">
+      <ActivityParams>
+            <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="verify" order="2" type="MOACTION" mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="activate" order="3" type="MOACTION"
+      mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="confirm" order="4" type="MOACTION" mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <ActivitySelection
+      invalid="prepare,confirm|prepare,verify,confirm|verify,confirm" />
+  </NeActivityInformation>
+  <!-- For Fronthaul 6020 -->
+  <NeActivityInformation neType="FRONTHAUL-6020">
+    <Activity name="prepare" order="1" type="MOACTION" mandatory="false">
+      <ActivityParams>
+            <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="verify" order="2" type="MOACTION" mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="activate" order="3" type="MOACTION"
+      mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="confirm" order="4" type="MOACTION" mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <ActivitySelection
+      invalid="prepare,confirm|prepare,verify,confirm|verify,confirm" />
+  </NeActivityInformation>
+  <!-- For RadioTNode -->
+  <NeActivityInformation neType="RadioTNode">
+    <Activity name="prepare" order="1" type="MOACTION" mandatory="false">
+      <ActivityParams>
+            <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="verify" order="2" type="MOACTION" mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="activate" order="3" type="MOACTION"
+      mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="confirm" order="4" type="MOACTION" mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <ActivitySelection
+      invalid="prepare,confirm|prepare,verify,confirm|verify,confirm" />
+  </NeActivityInformation>
+  <!-- For RnNode -->
+  <NeActivityInformation neType="RnNode">
+    <Activity name="prepare" order="1" type="MOACTION" mandatory="false">
+      <ActivityParams>
+            <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="verify" order="2" type="MOACTION" mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="activate" order="3" type="MOACTION"
+      mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="confirm" order="4" type="MOACTION" mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <ActivitySelection
+      invalid="prepare,confirm|prepare,verify,confirm|verify,confirm" />
+  </NeActivityInformation>
+  <!-- For BSP -->
+  <NeActivityInformation neType="BSP">
+    <Activity name="prepare" order="1" type="MOACTION" mandatory="false">
+      <ActivityParams>
+            <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="verify" order="2" type="MOACTION" mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="activate" order="3" type="MOACTION"
+      mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+        <param name="STEP_BY_STEP" inputType="MULTI-SELECTION" />
+      </ActivityParams>
+    </Activity>
+    <ActivitySelection/>
+  </NeActivityInformation>
+  <NeActivityInformation neType="VTFRadioNode">
+    <Activity name="prepare" order="1" type="MOACTION" mandatory="false">
+      <ActivityParams>
+            <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="verify" order="2" type="MOACTION" mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="activate" order="3" type="MOACTION"
+      mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="confirm" order="4" type="MOACTION" mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <ActivitySelection
+      invalid="prepare,confirm|prepare,verify,confirm|verify,confirm" />
+  </NeActivityInformation>
+  <NeActivityInformation neType="5GRadioNode">
+    <Activity name="prepare" order="1" type="MOACTION" mandatory="false">
+      <ActivityParams>
+            <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="verify" order="2" type="MOACTION" mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="activate" order="3" type="MOACTION"
+      mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <Activity name="confirm" order="4" type="MOACTION" mandatory="false">
+      <ActivityParams>
+          <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+          <item>Manual</item>
+          <item>Immediate</item>
+        </param>
+      </ActivityParams>
+    </Activity>
+    <ActivitySelection
+      invalid="prepare,confirm|prepare,verify,confirm|verify,confirm" />
+  </NeActivityInformation> 
+</ActivityInformation>

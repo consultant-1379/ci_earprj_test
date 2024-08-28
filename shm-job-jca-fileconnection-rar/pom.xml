@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.ericsson.oss.services.shm</groupId>
+    <artifactId>cppinventorysynchservice</artifactId>
+    <version>1.128.4-SNAPSHOT</version>
+  </parent>
+  <artifactId>shm-job-jca-fileconnection-rar</artifactId>
+  <packaging>rar</packaging>
+  
+  <properties>
+<rar.source.location>file-ra-source</rar.source.location>
+</properties>
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>shm-common-file-ra-rar</artifactId>
+			<version>${version.shm-common}</version>
+			<type>rar</type>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>unpack-modules</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>shm-common-file-ra-rar</artifactId>
+									<version>${version.shm-common}</version>
+									<type>rar</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>target/${rar.source.location}/</outputDirectory>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-properties</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>target/${rar.source.location}/META-INF/</outputDirectory>
+							<resources>
+								<resource>
+									<directory>src/main/resources/</directory>
+									<includes>
+										<include>ironjacamar.xml</include>
+									</includes>
+								</resource>
+							</resources>
+							<overwrite>true</overwrite>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-rar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<rarSourceDirectory>target/${rar.source.location}</rarSourceDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+  
+</project>

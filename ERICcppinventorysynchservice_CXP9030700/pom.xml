@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>cppinventorysynchservice</artifactId>
+		<groupId>com.ericsson.oss.services.shm</groupId>
+    <version>1.128.4-SNAPSHOT</version>
+	</parent>
+	<artifactId>ERICcppinventorysynchservice_CXP9030700</artifactId>
+	<name>[${project.parent.artifactId}] RPM module</name>
+	<packaging>${rpm.packaging}</packaging>
+
+
+	<properties>
+		<com.ericsson.oss.rpm.architecture>noarch</com.ericsson.oss.rpm.architecture>
+		<!-- Install path = /${rpm-root}/${comp-name}/${install-path} -->
+		<rpm-root>opt</rpm-root>
+		<comp-name>ericsson</comp-name>
+		<install-path>${project.groupId}</install-path>
+		<publish_artifact>true</publish_artifact>
+		<media.category>service</media.category>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ericsson.oss.services.shm</groupId>
+			<artifactId>cppinventorysynchservice-ear</artifactId>
+			<version>${project.version}</version>
+			<type>ear</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>rpm-maven-plugin</artifactId>
+				<configuration>				
+					<mappings>
+						<mapping>
+							<directory>${vm.install-path}</directory>
+							<filemode>500</filemode>
+							<username>${jboss-username}</username>
+							<groupname>${jboss-groupname}</groupname>
+							<dependency>
+								<includes>
+									<include>${project.groupId}:cppinventorysynchservice-ear</include>
+								</includes>
+							</dependency>
+						</mapping>
+					</mappings>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

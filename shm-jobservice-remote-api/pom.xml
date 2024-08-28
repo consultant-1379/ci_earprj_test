@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ericsson.oss.services.shm</groupId>
+		<artifactId>cppinventorysynchservice</artifactId>
+    <version>1.128.4-SNAPSHOT</version>
+	</parent>
+	<artifactId>shm-jobservice-remote-api</artifactId>
+	<name>shmjobservice remote API module</name>
+	<dependencies>
+		<dependency>
+			<groupId>com.ericsson.oss.services.shm</groupId>
+			<artifactId>shmjobservice-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.services.shm</groupId>
+			<artifactId>job-common-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+</project>

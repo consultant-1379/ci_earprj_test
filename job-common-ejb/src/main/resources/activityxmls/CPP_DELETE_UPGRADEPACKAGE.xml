@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityInformation platformType="CPP"
+	jobType="DELETE_UPGRADEPACKAGE" xmlns="com:ericsson:oss:services:shm:job:activity"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="com:ericsson:oss:services:shm:job:activity activity_information.xsd ">
+	<NeActivityInformation neType="DEFAULT">
+		<Activity name="deleteupgradepackage" order="1" type="MOACTION"
+			mandatory="true">
+			<ActivityParams>
+				<param name="deleteUPList" inputType="TEXT" />
+				<param name="deleteFromRollbackList" inputType="MULTI-SELECTION" />
+				<param name="deleteReferredUPs" inputType="MULTI-SELECTION" />
+			</ActivityParams>
+		</Activity>
+	</NeActivityInformation>
+</ActivityInformation>

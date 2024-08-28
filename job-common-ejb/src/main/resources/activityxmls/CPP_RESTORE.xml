@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityInformation platformType="CPP" jobType="RESTORE"
+	xmlns="com:ericsson:oss:services:shm:job:activity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="com:ericsson:oss:services:shm:job:activity activity_information.xsd ">
+	<NeActivityInformation neType="DEFAULT">
+		<Activity name="download" order="1" type="MOACTION" mandatory="true">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="verify" order="2" type="MOACTION" mandatory="false">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="install" order="3" type="MOACTION" mandatory="false"
+			dependsOn="verify">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate" selectActivity="verify">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+				<param name="REPLACE_CORRUPTED_UPGRADE_PACKAGES" inputType="MULTI-SELECTION" selectActivity="verify"/>
+			</ActivityParams>
+		</Activity>
+		<Activity name="restore" order="4" type="MOACTION" mandatory="false"
+			dependsOn="verify">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+				<param name="AUTO_CONFIGURATION" inputType="SINGLE-SELECTION"
+					defaultValue="AS_CONFIGURED">
+					<item>AS_CONFIGURED</item>
+					<item>ON</item>
+					<item>OFF</item>
+				</param>
+				<param name="FORCED_RESTORE" inputType="MULTI-SELECTION"/>
+				
+			</ActivityParams>
+		</Activity>
+		<Activity name="confirm" order="5" type="MOACTION" mandatory="false">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<ActivitySelection
+			invalid="download,confirm|verify,confirm|install,confirm|download,verify,install,confirm|download,install,confirm|download,verify,confirm|verify,install,confirm" />
+	</NeActivityInformation>
+</ActivityInformation>
+

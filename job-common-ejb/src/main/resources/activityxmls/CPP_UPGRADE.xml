@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityInformation platformType="CPP" jobType="UPGRADE"
+	xmlns="com:ericsson:oss:services:shm:job:activity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="com:ericsson:oss:services:shm:job:activity activity_information.xsd ">
+	<NeActivityInformation neType="DEFAULT">
+		<Activity name="install" order="1" type="MOACTION">
+			<ActivityParams>
+				    <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+				<param name="FORCEINSTALL" inputType="SINGLE-SELECTION"
+					defaultValue="delta">
+					<item>delta</item>
+					<item>full</item>
+				</param>
+				<param name="SELECTIVEINSTALL" inputType="SINGLE-SELECTION"
+					defaultValue="not selective">
+					<item>not selective</item>
+					<item>selective</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="verify" order="2" type="MOACTION">
+			<ActivityParams>
+					<param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="upgrade" order="3" type="MOACTION">
+			<ActivityParams>
+					<param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+				<param name="REBOOTNODEUPGRADE" inputType="SINGLE-SELECTION"
+					defaultValue="True">
+					<item>True</item>
+					<item>False</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="confirm" order="4" type="MOACTION">
+			<ActivityParams>
+					<param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">										
+					
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<ActivitySelection
+			invalid="install,confirm|install,verify,confirm|verify,confirm" />
+	</NeActivityInformation>
+</ActivityInformation>
+

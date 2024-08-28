@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityInformation platformType="vRAN" jobType="UPGRADE"
+    xmlns="com:ericsson:oss:services:shm:job:activity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="com:ericsson:oss:services:shm:job:activity activity_information.xsd ">
+        <NeActivityInformation neType="DEFAULT">
+        <Activity name="prepare" order="1" type="MOACTION" mandatory="false">
+            <ActivityParams>
+                <param name="Startup" inputType="SINGLE-SELECTION"
+                    defaultValue="Immediate">
+                    <item>Manual</item>
+                    <item>Immediate</item>
+                </param>
+            </ActivityParams>
+        </Activity>
+        <Activity name="verify" order="2" type="MOACTION" mandatory="false">
+            <ActivityParams>
+                <param name="Startup" inputType="SINGLE-SELECTION"
+                    defaultValue="Immediate">
+                    <item>Manual</item>
+                    <item>Immediate</item>
+                </param>
+            </ActivityParams>
+        </Activity>
+        <Activity name="activate" order="3" type="MOACTION"
+            mandatory="false">
+            <ActivityParams>
+                <param name="Startup" inputType="SINGLE-SELECTION"
+                    defaultValue="Immediate">
+                    <item>Manual</item>
+                    <item>Immediate</item>
+                </param>
+            <param name="FallBackTimeout" inputType="TEXT" pattern="^[1-9]+$"></param>
+            </ActivityParams>
+        </Activity>
+        <Activity name="confirm" order="4" type="MOACTION" mandatory="false">
+            <ActivityParams>
+                <param name="Startup" inputType="SINGLE-SELECTION"
+                    defaultValue="Immediate">
+                    <item>Manual</item>
+                    <item>Immediate</item>
+                </param>
+            </ActivityParams>
+        </Activity>
+        <ActivitySelection
+            invalid="prepare,confirm|prepare,verify,confirm|verify,confirm" />
+    </NeActivityInformation>
+
+    <!-- Activity information for vRC nodes  -->
+    <NeActivityInformation neType="vRC">
+        <Activity name="prepare" order="1" type="MOACTION" mandatory="false">
+            <ActivityParams>
+                <param name="Startup" inputType="SINGLE-SELECTION"
+                    defaultValue="Immediate">
+                    <item>Manual</item>
+                    <item>Immediate</item>
+                </param>
+            </ActivityParams>
+        </Activity>
+        <Activity name="verify" order="2" type="MOACTION" mandatory="false">
+            <ActivityParams>
+                <param name="Startup" inputType="SINGLE-SELECTION"
+                    defaultValue="Immediate">
+                    <item>Manual</item>
+                    <item>Immediate</item>
+                </param>
+            </ActivityParams>
+        </Activity>
+        <Activity name="activate" order="3" type="MOACTION"
+            mandatory="false">
+            <ActivityParams>
+                <param name="Startup" inputType="SINGLE-SELECTION"
+                    defaultValue="Immediate">
+                    <item>Manual</item>
+                    <item>Immediate</item>
+                </param>
+            <param name="FallBackTimeout" inputType="TEXT" pattern="^[1-9]+$"></param>
+            </ActivityParams>
+        </Activity>
+        <Activity name="confirm" order="4" type="MOACTION" mandatory="false">
+            <ActivityParams>
+                <param name="Startup" inputType="SINGLE-SELECTION"
+                    defaultValue="Immediate">
+                    <item>Manual</item>
+                    <item>Immediate</item>
+                </param>
+            </ActivityParams>
+        </Activity>
+        <ActivitySelection
+            invalid="prepare,confirm|prepare,verify,confirm|verify,confirm" />
+    </NeActivityInformation>
+
+    <!-- Activity information for vPP nodes-->
+    <NeActivityInformation neType="vPP">
+        <Activity name="prepare" order="1" type="MOACTION" mandatory="false">
+            <ActivityParams>
+                <param name="Startup" inputType="SINGLE-SELECTION"
+                    defaultValue="Immediate">
+                    <item>Manual</item>
+                    <item>Immediate</item>
+                </param>
+            </ActivityParams>
+        </Activity>
+        <Activity name="verify" order="2" type="MOACTION" mandatory="false">
+            <ActivityParams>
+                <param name="Startup" inputType="SINGLE-SELECTION"
+                    defaultValue="Immediate">
+                    <item>Manual</item>
+                    <item>Immediate</item>
+                </param>
+            </ActivityParams>
+        </Activity>
+        <Activity name="activate" order="3" type="MOACTION"
+            mandatory="false">
+            <ActivityParams>
+                <param name="Startup" inputType="SINGLE-SELECTION"
+                    defaultValue="Immediate">
+                    <item>Manual</item>
+                    <item>Immediate</item>
+                </param>
+            <param name="FallBackTimeout" inputType="TEXT" pattern="^[1-9]+$"></param>
+            </ActivityParams>
+        </Activity>
+        <Activity name="confirm" order="4" type="MOACTION" mandatory="false">
+            <ActivityParams>
+                <param name="Startup" inputType="SINGLE-SELECTION"
+                    defaultValue="Immediate">
+                    <item>Manual</item>
+                    <item>Immediate</item>
+                </param>
+            </ActivityParams>
+        </Activity>
+        <ActivitySelection
+            invalid="prepare,confirm|prepare,verify,confirm|verify,confirm" />
+    </NeActivityInformation>
+</ActivityInformation>
+

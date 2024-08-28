@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityInformation platformType="CPP" jobType="NODERESTART" xmlns="com:ericsson:oss:services:shm:job:activity"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="com:ericsson:oss:services:shm:job:activity activity_information.xsd ">
+	<NeActivityInformation neType="DEFAULT">		
+			<Activity name="manualrestart" order="1" type="MOACTION" mandatory="true">
+			    <ActivityParams>
+					<param name="restartRank" inputType="SINGLE-SELECTION"
+						defaultValue="RESTART_WARM">
+						<item>RESTART_WARM</item>
+						<item>RESTART_REFRESH</item>
+						<item>RESTART_COLD</item>
+						<item>RESTART_COLDWTEST</item>
+					</param>
+					<param name="restartReason" inputType="SINGLE-SELECTION"
+						defaultValue="PLANNED_RECONFIGURATION">
+						<item>PLANNED_RECONFIGURATION</item>
+						<item>UNPLANNED_NODE_EXTERNAL_PROBLEMS</item>
+						<item>UNPLANNED_NODE_UPGRADE_PROBLEMS</item>
+						<item>UNPLANNED_O_AND_M_ISSUE</item>
+						<item>UNPLANNED_CYCLIC_RECOVERY</item>
+						<item>UNPLANNED_LOCKED_RESOURCES</item>
+						<item>UNPLANNED_COLD_WITH_HW_TEST</item>
+						<item>UNPLANNED_CALL_PROCESSING_DEGRADATION</item>
+						<item>UNPLANNED_LOW_COVERAGE</item>
+						<item>UPGRADE_BOARD_RESTART</item>
+						<item>OPERATOR_CLASSIFIED_PROBLEMS</item>
+					</param>
+					<param name="restartInfo" inputType="TEXT" pattern="^[a-zA-Z0-9._%:-\s]{0,80}$" />
+				</ActivityParams>
+				</Activity>
+	</NeActivityInformation>
+	
+</ActivityInformation>

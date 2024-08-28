@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityInformation platformType="CPP" jobType="BACKUP" xmlns="com:ericsson:oss:services:shm:job:activity"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="com:ericsson:oss:services:shm:job:activity activity_information.xsd ">
+	<NeActivityInformation neType="DEFAULT">		
+			<Activity name="createcv" order="1" type="MOACTION"
+				mandatory="true">
+				<ActivityParams>
+					<param name="CV_NAME" inputType="TEXT" pattern="^((?!autocreated1$)(?!autocreated2$)[a-zA-Z0-9._%:-]*([$]productnumber)*([$]productrevision)*([$]timestamp)*([$]nodename)*)+$" />
+					<param name="GENERATE_BACKUP_NAME" inputType="MULTI-SELECTION" defaultValue="true"/>
+					<param name="CV_IDENTITY" inputType="TEXT" pattern="^[a-zA-Z0-9._%:-]{0,40}$" />
+					<param name="CV_COMMENT" inputType="TEXT" pattern="^[a-zA-Z 0-9._%:-]{0,40}$" />
+					<param name="CV_TYPE" inputType="SINGLE-SELECTION"
+						defaultValue="STANDARD">
+						<item>STANDARD</item>
+						<item>TEST</item>
+						<item>OTHER</item>
+					</param>
+				</ActivityParams>
+			</Activity>
+			<Activity name="setcvasstartable" order="2" type="MOACTION"
+				mandatory="false">
+				<ActivityParams>
+					<param name="STARTABLE_CV_NAME" inputType="HIDDEN" defaultValue="$CV_NAME" />
+				</ActivityParams>
+			</Activity>
+			<Activity name="setcvfirstinrollbacklist" order="3" type="MOACTION"
+				mandatory="false">
+				<ActivityParams>
+					<param name="ROLLBACK_CV_NAME" inputType="HIDDEN" defaultValue="$CV_NAME" />
+				</ActivityParams>
+			</Activity>
+			<Activity name="exportcv" order="4" type="MOACTION" mandatory="false">
+				<ActivityParams>
+					<param name="UPLOAD_CV_NAME" inputType="HIDDEN" defaultValue="$CV_NAME" />
+				</ActivityParams>
+			</Activity>		
+	</NeActivityInformation>	
+</ActivityInformation>
+

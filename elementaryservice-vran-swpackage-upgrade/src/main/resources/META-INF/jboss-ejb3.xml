@@ -1,0 +1,21 @@
+<jboss xmlns="http://www.jboss.com/xml/ns/javaee" xmlns:jee="http://java.sun.com/xml/ns/javaee"
+	xmlns:c="urn:clustering:1.0">
+	<jee:assembly-descriptor>
+		<c:clustering>
+			<jee:ejb-name>PrepareService</jee:ejb-name>
+			<c:clustered>true</c:clustered>
+		</c:clustering>
+		<c:clustering>
+			<jee:ejb-name>VerifyService</jee:ejb-name>
+			<c:clustered>true</c:clustered>
+		</c:clustering>
+		<c:clustering>
+			<jee:ejb-name>ActivateService</jee:ejb-name>
+			<c:clustered>true</c:clustered>
+		</c:clustering>
+		<c:clustering>
+			<jee:ejb-name>ConfirmService</jee:ejb-name>
+			<c:clustered>true</c:clustered>
+		</c:clustering>
+	</jee:assembly-descriptor>
+</jboss>

@@ -1,0 +1,5 @@
+<module xmlns="urn:jboss:module:1.0" name="com.ericsson.oss.services.shm.api">
+	<resources>	
+		<resource-root path="filestore-softwarepackage-remote-api-${project.version}.jar" />
+	</resources>
+</module>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityInformation platformType="CPP"
+	jobType="BACKUP_HOUSEKEEPING" xmlns="com:ericsson:oss:services:shm:job:activity"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="com:ericsson:oss:services:shm:job:activity activity_information.xsd ">
+	<NeActivityInformation neType="DEFAULT">
+		<Activity name="cleancv" order="1" type="MOACTION" mandatory="true">
+			<ActivityParams>
+				<param name="CLEAR_ALL_BACKUPS" inputType="RADIO-BUTTON" />
+				<param name="CLEAR_ELIGIBLE_BACKUPS" inputType="RADIO-BUTTON">
+					<param name="BACKUPS_TO_KEEP_IN_ROLLBACK_LIST" inputType="SPINNER"
+						selectable="true"></param>
+					<param name="MAX_BACKUPS_TO_KEEP_ON_NODE" inputType="SPINNER"
+						selectable="true"></param>
+				</param>
+			</ActivityParams>
+		</Activity>
+	</NeActivityInformation>
+	<NeActivityInformation neType="ERBS">
+		<Activity name="cleancv" order="1" type="MOACTION" mandatory="true">
+			<ActivityParams>
+				<param name="CLEAR_ALL_BACKUPS" inputType="RADIO-BUTTON" />
+				<param name="CLEAR_ELIGIBLE_BACKUPS" inputType="RADIO-BUTTON">
+					<param name="BACKUPS_TO_KEEP_IN_ROLLBACK_LIST" inputType="SPINNER" selectable="true" defaultValue="10"></param>
+					<param name="MAX_BACKUPS_TO_KEEP_ON_NODE" inputType="SPINNER" selectable="true" defaultValue="35"></param>
+				</param>
+			</ActivityParams>
+		</Activity>
+	</NeActivityInformation>
+</ActivityInformation>

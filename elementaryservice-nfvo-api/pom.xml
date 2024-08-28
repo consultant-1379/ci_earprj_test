@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.ericsson.oss.services.shm</groupId>
+    <artifactId>cppinventorysynchservice</artifactId>
+    <version>1.128.4-SNAPSHOT</version>
+  </parent>
+  <artifactId>elementaryservice-nfvo-api</artifactId>
+<dependencies>
+		<dependency>
+			<groupId>com.ericsson.oss.services.shm</groupId>
+			<artifactId>shm-common-enums</artifactId>
+			<version>${version.shm-common}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.itpf.datalayer.dps</groupId>
+			<artifactId>dps-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>shmjobservice-api</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.services.shm.models</groupId>
+			<artifactId>shm-models-jar</artifactId>
+			<version>${version.shm.models}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>shm-common-api</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- below is the api of the sdk-recording SWFWK impl jar (provides system 
+			recording with LITP) -->
+		<dependency>
+			<groupId>com.ericsson.oss.itpf.sdk</groupId>
+			<artifactId>sdk-recording-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- below is the api of the sdk-tracing SWFWK impl jar (provides tracing 
+			of applications) -->
+		<dependency>
+			<groupId>com.ericsson.oss.itpf.sdk</groupId>
+			<artifactId>sdk-tracing-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.services.shm</groupId>
+			<artifactId>shm-common-annotations</artifactId>
+			<version>${version.shm-common}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.services.shm</groupId>
+			<artifactId>elementaryservice-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+</project>

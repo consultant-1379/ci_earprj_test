@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityInformation platformType="MINI_LINK_OUTDOOR" jobType="RESTORE"
+    xmlns="com:ericsson:oss:services:shm:job:activity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="com:ericsson:oss:services:shm:job:activity activity_information.xsd ">
+    <NeActivityInformation neType="DEFAULT">
+        <Activity name="restore" order="1" type="MOACTION" mandatory="true">
+            <ActivityParams>
+                <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+                    <item>Manual</item>
+                    <item>Immediate</item>
+                </param>
+            </ActivityParams>
+        </Activity>
+        <ActivitySelection valid="restore" />
+    </NeActivityInformation>
+</ActivityInformation>

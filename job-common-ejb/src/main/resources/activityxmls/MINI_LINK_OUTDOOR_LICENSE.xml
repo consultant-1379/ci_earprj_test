@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityInformation platformType="MINI_LINK_OUTDOOR" jobType="LICENSE" xmlns="com:ericsson:oss:services:shm:job:activity"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="com:ericsson:oss:services:shm:job:activity activity_information.xsd ">
+    <NeActivityInformation neType="DEFAULT">
+             <Activity name="install" order="1" type="MOACTION" mandatory="true"/>
+    </NeActivityInformation>
+</ActivityInformation>

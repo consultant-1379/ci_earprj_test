@@ -1,0 +1,28 @@
+<jboss xmlns="http://www.jboss.com/xml/ns/javaee" xmlns:jee="http://java.sun.com/xml/ns/javaee" xmlns:c="urn:clustering:1.0">
+    <jee:assembly-descriptor>
+        <c:clustering>
+            <jee:ejb-name>JobStatusServiceImpl</jee:ejb-name>
+            <c:clustered>true</c:clustered>
+        </c:clustering>
+        <c:clustering>
+            <jee:ejb-name>NeJobInstrumentaionService</jee:ejb-name>
+            <c:clustered>true</c:clustered>
+        </c:clustering>
+        <c:clustering>
+            <jee:ejb-name>ActvityInstrumentationService</jee:ejb-name>
+            <c:clustered>true</c:clustered>
+        </c:clustering>
+        <c:clustering>
+            <jee:ejb-name>ActivityExecuteInvocationStatusImpl</jee:ejb-name>
+            <c:clustered>true</c:clustered>
+        </c:clustering>
+        <c:clustering>
+            <jee:ejb-name>WaitingJobsInstrumentationService</jee:ejb-name>
+            <c:clustered>true</c:clustered>
+        </c:clustering>
+        <c:clustering>
+            <jee:ejb-name>MainJobInstrumentationService</jee:ejb-name>
+            <c:clustered>true</c:clustered>
+        </c:clustering>
+    </jee:assembly-descriptor>
+</jboss>

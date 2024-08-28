@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityInformation platformType="ECIM" jobType="RESTORE"
+	xmlns="com:ericsson:oss:services:shm:job:activity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="com:ericsson:oss:services:shm:job:activity activity_information.xsd ">
+	<NeActivityInformation neType="DEFAULT">
+		<Activity name="downloadbackup" order="1" type="MOACTION"
+			mandatory="true">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="restorebackup" order="2" type="MOACTION"
+			mandatory="false">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="confirmbackup" order="3" type="MOACTION"
+			mandatory="false">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<ActivitySelection invalid="downloadbackup,confirmbackup" />
+	</NeActivityInformation>
+	<!-- For Router 6672 -->
+	<NeActivityInformation neType="ROUTER6672">
+		<Activity name="downloadbackup" order="1" type="MOACTION"
+			mandatory="true">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="restorebackup" order="2" type="MOACTION"
+			mandatory="false">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<ActivitySelection valid="downloadbackup,restorebackup" />
+	</NeActivityInformation> 
+	<!-- For Router 6675 -->
+	<NeActivityInformation neType="ROUTER6675">
+		<Activity name="downloadbackup" order="1" type="MOACTION"
+			mandatory="true">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="restorebackup" order="2" type="MOACTION"
+			mandatory="false">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<ActivitySelection valid="downloadbackup,restorebackup" />
+	</NeActivityInformation>
+    <!-- For Router 6x71 -->
+	<NeActivityInformation neType="ROUTER6x71">
+		<Activity name="downloadbackup" order="1" type="MOACTION"
+			mandatory="true">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="restorebackup" order="2" type="MOACTION"
+			mandatory="false">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<ActivitySelection valid="downloadbackup,restorebackup" />
+	</NeActivityInformation>
+    <!-- For Router 6274 -->
+	<NeActivityInformation neType="ROUTER6274">
+		<Activity name="downloadbackup" order="1" type="MOACTION"
+			mandatory="true">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="restorebackup" order="2" type="MOACTION"
+			mandatory="false">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<ActivitySelection valid="downloadbackup,restorebackup" />
+	</NeActivityInformation>	
+	<!-- For Fronthaul 6080 -->
+	<NeActivityInformation neType="FRONTHAUL-6080">
+		<Activity name="downloadbackup" order="1" type="MOACTION"
+			mandatory="true">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="restorebackup" order="2" type="MOACTION"
+			mandatory="false">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<ActivitySelection valid="downloadbackup,restorebackup" />
+	</NeActivityInformation>
+	<!-- For Fronthaul 6020 -->
+	<NeActivityInformation neType="FRONTHAUL-6020">
+		<Activity name="downloadbackup" order="1" type="MOACTION"
+			mandatory="true">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="restorebackup" order="2" type="MOACTION"
+			mandatory="false">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<ActivitySelection valid="downloadbackup,restorebackup" />
+	</NeActivityInformation>
+	<!-- For SAPC -->
+	<NeActivityInformation neType="SAPC">
+		<Activity name="downloadbackup" order="1" type="MOACTION"
+			mandatory="true">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<Activity name="restorebackup" order="2" type="MOACTION"
+			mandatory="false">
+			<ActivityParams>
+				<param name="Startup" inputType="SINGLE-SELECTION"
+					defaultValue="Immediate">
+
+					<item>Manual</item>
+					<item>Immediate</item>
+				</param>
+			</ActivityParams>
+		</Activity>
+		<ActivitySelection valid="downloadbackup,restorebackup" />
+	</NeActivityInformation>
+</ActivityInformation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ironjacamar>
+	<connection-definitions>
+		<connection-definition
+			class-name="com.ericsson.oss.services.shm.ra.impl.ManagedConnectionFactoryImpl"
+			jndi-name="java:/app/eis/shmJobFileConnector">
+			<pool>
+				<min-pool-size>10</min-pool-size>
+				<max-pool-size>50</max-pool-size>
+			</pool>
+		</connection-definition>
+	</connection-definitions>
+</ironjacamar>

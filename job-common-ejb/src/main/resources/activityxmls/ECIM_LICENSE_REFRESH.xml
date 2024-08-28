@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityInformation platformType="ECIM" jobType="LICENSE_REFRESH" xmlns="com:ericsson:oss:services:shm:job:activity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="com:ericsson:oss:services:shm:job:activity activity_information.xsd ">
+   <NeActivityInformation neType="RadioNode">
+      <Activity name="refresh" order="1" type="MOACTION" mandatory="true">
+         <ActivityParams>
+            <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+               <item>Manual</item>
+               <item>Immediate</item>
+            </param>
+         </ActivityParams>
+      </Activity>
+      <Activity name="request" order="2" type="MOACTION" mandatory="true">
+         <ActivityParams>
+            <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+               <item>Manual</item>
+               <item>Immediate</item>
+            </param>
+         </ActivityParams>
+      </Activity>
+      <Activity name="install" order="3" type="MOACTION" mandatory="false">
+         <ActivityParams>
+            <param name="Startup" inputType="SINGLE-SELECTION" defaultValue="Immediate">
+               <item>Manual</item>
+               <item>Immediate</item>
+            </param>
+         </ActivityParams>
+      </Activity>
+      <ActivitySelection invalid="install" />
+   </NeActivityInformation>
+</ActivityInformation>

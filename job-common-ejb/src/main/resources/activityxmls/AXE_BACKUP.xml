@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityInformation platformType="AXE" jobType="BACKUP"
+xmlns="com:ericsson:oss:services:shm:job:activity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="com:ericsson:oss:services:shm:job:activity activity_information.xsd ">
+    <NeActivityInformation neType="DEFAULT">
+        <Activity name="createbackup" order="1" type="RESTINVOCATION" mandatory="true">
+            <ActivityParams>
+                <param name="Overwrite" inputType="MULTI-SELECTION" defaultValue="false" />
+                <param name="Rotate" inputType="MULTI-SELECTION" defaultValue="false" />
+                <param name="Password" inputType="TEXT-PASSWORD" defaultValue="" />
+                <param name="Userlabel" inputType="TEXT" defaultValue="" />
+            </ActivityParams>
+        </Activity>
+        <Activity name="uploadbackup" order="2" type="RESTINVOCATION" mandatory="false">
+            <ActivityParams>
+                <param name="UPLOAD_BACKUP_DETAILS" inputType="HIDDEN" defaultValue="" />
+            </ActivityParams>
+        </Activity>
+    </NeActivityInformation>
+</ActivityInformation>

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>cppinventorysynchservice</artifactId>
+		<groupId>com.ericsson.oss.services.shm</groupId>
+        <version>1.128.4-SNAPSHOT</version>
+	</parent>
+	
+	<artifactId>cppinventorysynchservice-war</artifactId>
+	<packaging>war</packaging>
+	<name>[${project.parent.artifactId}] WAR module</name>
+
+	<properties>
+		<version.maven-war-plugin>2.2</version.maven-war-plugin>
+		<sonar.tests>src/test/groovy,src/test/java</sonar.tests>
+	</properties>
+
+	<build>
+		<finalName>cppinventorysynchservice-war</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${version.maven-war-plugin}</version>
+				<configuration>
+					<warName>${project.parent.artifactId}</warName>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<webappDirectory>target/${project.parent.artifactId}-${project.version}</webappDirectory>
+					<resource>
+						<directory>${basedir}/src/main/webapp/WEB-INF</directory>
+						<filtering>true</filtering>
+						<targetPath>WEB-INF</targetPath>
+						<includes>
+							<include>*.xml</include>
+						</includes>
+					</resource>
+					<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jboss.as.plugins</groupId>
+				<artifactId>jboss-as-maven-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+
+				<configuration>
+					<compilerArguments>
+						<!-- must point to exact name of final deployable artifact name -->
+						<AservicePackageName>${project.parent.artifactId}-war</AservicePackageName>
+						<!-- must point to project version -->
+						<AserviceVersion>${project.version}</AserviceVersion>
+					</compilerArguments>
+					<generatedSourcesDirectory>${project.basedir}/target/classes/sdk/</generatedSourcesDirectory>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<useSystemClassLoader>true</useSystemClassLoader>
+					<useManifestOnlyJar>false</useManifestOnlyJar>
+					<useFile>false</useFile>
+					<includes>
+						<include>**/*Test.java</include>
+						<include>**/*Spec.java</include>
+					</includes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ericsson.oss.services.shm</groupId>
+			<artifactId>shm-common-enums</artifactId>
+			<scope>provided</scope>
+			<version>${version.shm-common}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.services.shm</groupId>
+			<artifactId>backupservice-remote-api</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.services.shm</groupId>
+			<artifactId>shm-common-ne-utils</artifactId>
+			<scope>provided</scope>
+			<version>${version.shm-common}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.parent.artifactId}-ejb</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>shmjobservice-ejb</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>jobexecutor-api</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>jobexecutor-ejb</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+			<type>ejb</type>
+		</dependency>
+		<!-- end of addition -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>job-common-api</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ericsson.oss.itpf.sdk</groupId>
+			<artifactId>sdk-eventbus-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.itpf.sdk</groupId>
+			<artifactId>sdk-resources-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-multipart-provider</artifactId>
+			<version>2.3.6.Final</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- optional, good for handle I/O task -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxrs</artifactId>
+			<version>${resteasy.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxb-provider</artifactId>
+			<version>${resteasy.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jettison-provider</artifactId>
+			<version>${resteasy.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Testing Elementary Service backup(Need to remove this dependency) -->
+		<dependency>
+			<groupId>com.ericsson.oss.services.shm</groupId>
+			<artifactId>elementaryservice-cpp</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.services.shm</groupId>
+			<artifactId>elementaryservice-impl</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- below is the api of the sdk-tracing SWFWK impl jar (provides tracing 
+			of applications) -->
+		<dependency>
+			<groupId>com.ericsson.oss.itpf.sdk</groupId>
+			<artifactId>sdk-tracing-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-mockito-release-full</artifactId>
+			<version>${version.powermock}</version>
+			<type>pom</type>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- REST SDK Webpush api -->
+		<dependency>
+			<groupId>com.ericsson.oss.uisdk</groupId>
+			<artifactId>restsdk-webpush-api</artifactId>
+			<version>${version.restsdk.webpush}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>shmwebpushservice-api</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Spock and CDI Support tests -->
+		<dependency>
+			<groupId>com.ericsson.cds</groupId>
+			<artifactId>cdi-test-support</artifactId>
+			<version>${version.cdi-test-support}</version>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>com.ericsson.oss.itpf.datalayer.dps</groupId>
+					<artifactId>dps-test-support</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.itpf.datalayer.dps</groupId>
+			<artifactId>dps-test-support</artifactId>
+			<version>2.39.6</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.spockframework</groupId>
+			<artifactId>spock-core</artifactId>
+			<version>${version.spock}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>${version.cglib}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- enables mocking of classes without default constructor (together with 
+			CGLIB) -->
+		<dependency>
+			<groupId>org.objenesis</groupId>
+			<artifactId>objenesis</artifactId>
+			<version>${version.objenesis}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>${version.groovy}</version>
+			<scope>test</scope>
+		</dependency>
+		<!--End Of Spock and CDI Support tests -->
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>devel_env</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<dependencies>
+				<!-- All devel-environment specific (non production ready) dependencies 
+					to Service Framework implementation modules should go here -->
+
+			</dependencies>
+		</profile>
+
+		<profile>
+			<id>production_env</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<dependencies>
+				<!-- All production-ready dependencies to Service Framework implementation 
+					modules should go here. These are LITP specific -->
+				<!-- <dependency> <groupId>com.ericsson.oss.itpf.sdk</groupId> <artifactId>sdk-eventbus-jms</artifactId> 
+					</dependency> <dependency> <groupId>com.ericsson.oss.itpf.sdk</groupId> <artifactId>sdk-cache-api</artifactId> 
+					</dependency> <dependency> <groupId>com.ericsson.oss.itpf.sdk</groupId> <artifactId>sdk-modeled-eventbus</artifactId> 
+					</dependency> <dependency> <groupId>com.ericsson.oss.itpf.sdk</groupId> <artifactId>sdk-cache-infinispan</artifactId> 
+					</dependency> <dependency> <groupId>com.ericsson.oss.itpf.sdk</groupId> <artifactId>sdk-instrumentation</artifactId> 
+					</dependency> <dependency> <groupId>com.ericsson.oss.itpf.sdk</groupId> <artifactId>sdk-el</artifactId> 
+					</dependency> <dependency> <groupId>de.odysseus.juel</groupId> <artifactId>juel-impl</artifactId> 
+					<version>2.2.4</version> </dependency> <dependency> <groupId>com.ericsson.oss.itpf.sdk</groupId> 
+					<artifactId>sdk-tracing</artifactId> </dependency> -->
+			</dependencies>
+		</profile>
+
+	</profiles>
+</project>
